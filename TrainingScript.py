@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 from Network import Network
 from CustomDataset import CustomDataset
 
-batch_size = 1
+batch_size = 10
 learning_rate = 0.001
 weight_decay = 0.0001
 
@@ -59,9 +59,10 @@ def train(num_epochs):
             optimizer.step()
 
             running_loss += loss.item()
-            if i % 1000 == 999:
+            if i % 100 == 99:
                 print('[%d, %5d] loss: %.3f' % (epoch+1, i+1, running_loss/1000))
                 running_loss = 0.0
+                saveModel()
 
 if __name__ == '__main__':
     train(5)
