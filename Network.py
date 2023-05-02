@@ -42,7 +42,7 @@ class Network(nn.Module):
 #         super(Network, self).__init__()
 
 #         # Define the network layer structure here
-#         # Example from the website shown here
+#         # Example from the slides shown here
 #         self.conv1 = nn.Conv2d(in_channels=3, out_channels=12, kernel_size=5, stride=1, padding=1)
 #         self.bn1 = nn.BatchNorm2d(12)
 #         self.conv2 = nn.Conv2d(in_channels=12, out_channels=12, kernel_size=5, stride=1, padding=1)
@@ -54,16 +54,16 @@ class Network(nn.Module):
 #         self.bn4 = nn.BatchNorm2d(24)
 #         self.pool2 = nn.MaxPool2d(2,2)
 #         self.conv5 = nn.Conv2d(in_channels=24, out_channels=24, kernel_size=5, stride=1, padding=1)
-#         self.bn5 = nn.BatchNorm2d(12)
+#         self.bn5 = nn.BatchNorm2d(24)
 #         self.conv6 = nn.Conv2d(in_channels=24, out_channels=24, kernel_size=5, stride=1, padding=1)
 #         self.bn6 = nn.BatchNorm2d(24)
 #         self.pool3 = nn.MaxPool2d(2,2)
-#         self.fc1 = nn.Linear(24*10*10, 3)
+#         self.fc1 = nn.Linear(24*128*235, 3)
 
 #     def forward(self, input):
 #         # Define how a forward pass through the network would look here
 #         # This function contains all the nonlinear functions between layers
-#         # The example from the website is continued here
+#         # The example from the slides is continued here
 #         output = F.relu(self.bn1(self.conv1(input)))
 #         output = F.relu(self.bn2(self.conv2(output)))
 #         output = self.pool1(output)
@@ -73,7 +73,7 @@ class Network(nn.Module):
 #         output = F.relu(self.bn5(self.conv5(output)))
 #         output = F.relu(self.bn6(self.conv6(output)))
 #         output = self.pool3(output)
-#         output = output.view(-1, 24*10*10)
+#         output = output.view(-1, 24*128*235)
 #         output = self.fc1(output)
 
 #         return output

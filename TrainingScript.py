@@ -60,7 +60,7 @@ def train(num_epochs):
 
             running_loss += loss.item()
             if i % 100 == 99:
-                print('[%d, %5d] loss: %.3f' % (epoch+1, i+1, running_loss/1000))
+                print('[%d, %5d] loss: %.3f' % (epoch+1, i+1, running_loss/100))
                 running_loss = 0.0
                 saveModel()
 
